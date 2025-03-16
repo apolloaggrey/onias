@@ -59,7 +59,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     return NextResponse.json({ message: 'Apartment updated' });
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message }, { status: 500 });
-  } finally 
+  } finally {
     if (conn) await conn.end();
   }
 }
